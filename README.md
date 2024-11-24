@@ -18,7 +18,7 @@ Tech Stack
 Files Structure
 
 .
-├── kubernetes/
+├── Kubernetes/
 │   ├── postgres-main-values.yaml
 │   └── standalone-values.yaml
 ├── scripts/

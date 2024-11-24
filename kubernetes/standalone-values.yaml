@@ -1,10 +1,34 @@
-architecture: standalone
-primary:
-  service:
-    type: ClusterIP
-  persistence:
-    size: 5Gi
+# kubernetes/postgres-main-values.yaml
+architecture: replication
 auth:
   username: "testuser"
   password: "test123"
   database: "testdb"
+  replicationUsername: "repl_user"
+  replicationPassword: "repl123"
+
+primary:
+  service:
+    type: LoadBalancer
+  persistence:
+    size: 5Gi
+  resources:
+    limits:
+      memory: "1Gi"
+      cpu: "500m"
+    requests:
+      memory: "512Mi"
+      cpu: "250m"
+
+readReplicas:
+  # Here we specify 2 replicas
+  replicaCount: 2
+  persistence:
+    size: 5Gi
+  resources:
+    limits:
+      memory: "512Mi"
+      cpu: "250m"
+    requests:
+      memory: "256Mi"
+      cpu: "125m"

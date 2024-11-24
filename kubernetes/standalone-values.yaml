@@ -8,3 +8,5 @@ auth:
   username: "testuser"
   password: "test123"
   database: "testdb"
+  replicationUsername: "repl_user"
+  replicationPassword: "repl123"

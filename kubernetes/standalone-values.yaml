@@ -1,0 +1,10 @@
+architecture: standalone
+primary:
+  service:
+    type: ClusterIP
+  persistence:
+    size: 5Gi
+auth:
+  username: "testuser"
+  password: "test123"
+  database: "testdb"

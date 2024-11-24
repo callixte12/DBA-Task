@@ -1,0 +1,14 @@
+architecture: replication
+primary:
+  service:
+    type: LoadBalancer
+  persistence:
+    size: 5Gi
+readReplicas:
+  replicaCount: 1
+auth:
+  username: "testuser"
+  password: "test123"
+  database: "testdb"
+  replicationUsername: "repl_user"
+  replicationPassword: "repl123"

@@ -1,0 +1,22 @@
+primary:
+  service:
+    type: ClusterIP
+    port: 5432
+  persistence:
+    size: 5Gi
+  resources:
+    limits:
+      memory: "1Gi"
+      cpu: "500m"
+    requests:
+      memory: "512Mi"
+      cpu: "250m"
+
+auth:
+  username: "testuser"
+  password: "test123"
+  database: "testdb"
+  replicationUsername: "repl_user"
+  replicationPassword: "repl123"
+
+architecture: standalone

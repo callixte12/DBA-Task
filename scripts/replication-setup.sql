@@ -24,3 +24,8 @@ CREATE TABLE employees (
 
 -- Setup publication
 CREATE PUBLICATION main_pub FOR ALL TABLES;
+
+-- subscription on the standalone replica to replicate data from the primary cluster
+CREATE SUBSCRIPTION main_sub
+CONNECTION 'host=10.106.42.255 port=5432 dbname=testdb user=repl_user password=repl123'
+PUBLICATION main_pub;
